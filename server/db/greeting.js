@@ -3,6 +3,15 @@ const getGreetings = (db) => {
     .select('*')
 }
 
+function addGreeting(id, text, db) {
+  return db('greetings')
+    .insert({
+      id: id,
+      text: text
+    })
+}
+
+
 module.exports = {
   getGreetings
 }
