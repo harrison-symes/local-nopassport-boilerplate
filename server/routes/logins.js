@@ -19,6 +19,10 @@ router.post('/register', (req, res, next) => {
 router.post('/login', auth.issueJwt)
 
 // /routes below are private
+function getSecret (req, payload, done) {
+  done(null, process.env.JWT_SECRET)
+}
+
 router.use(
   verifyJwt({
     secret: getSecret
@@ -34,8 +38,6 @@ router.get('/account', (req, res) => {
 })
 
 
-function getSecret (req, payload, done) {
-  done(null, process.env.JWT_SECRET)
-}
+
 
 module.exports = router

@@ -15176,7 +15176,7 @@ module.exports = isObject;
 
 
 Object.defineProperty(exports, "__esModule", {
-   value: true
+  value: true
 });
 
 var _react = __webpack_require__(5);
@@ -15189,26 +15189,30 @@ var _SignInFormContainer = __webpack_require__(188);
 
 var _SignInFormContainer2 = _interopRequireDefault(_SignInFormContainer);
 
+var _Header = __webpack_require__(509);
+
+var _Header2 = _interopRequireDefault(_Header);
+
+var _Home = __webpack_require__(510);
+
+var _Home2 = _interopRequireDefault(_Home);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
-   return _react2.default.createElement(
-      _reactRouterDom.HashRouter,
-      null,
-      _react2.default.createElement(
-         'div',
-         { className: 'app' },
-         _react2.default.createElement(
-            'div',
-            { className: 'container-fluid' },
-            _react2.default.createElement(
-               _reactRouterDom.Switch,
-               null,
-               _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _SignInFormContainer2.default })
-            )
-         )
-      )
-   );
+  return _react2.default.createElement(
+    _reactRouterDom.HashRouter,
+    null,
+    _react2.default.createElement(
+      'div',
+      { className: 'app' },
+      _react2.default.createElement(_Header2.default, null),
+      ' ',
+      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _SignInFormContainer2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/outbursts', component: _Home2.default }),
+      ' '
+    )
+  );
 };
 exports.default = App;
 
@@ -15493,7 +15497,7 @@ var SignInFormContainer = function (_React$Component) {
       var _this2 = this;
 
       this.props.dispatch((0, _login.loginUser)(values, function () {
-        return _this2.props.history.push('/');
+        return _this2.props.history.push('/outbursts');
       }));
     }
   }, {
@@ -40900,6 +40904,68 @@ function registerUser(creds, callback) {
     });
   };
 }
+
+/***/ }),
+/* 509 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+   value: true
+});
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Header = function Header() {
+   return _react2.default.createElement(
+      "div",
+      { className: "header" },
+      _react2.default.createElement(
+         "h1",
+         null,
+         "Outbursts"
+      )
+   );
+};
+
+exports.default = Header;
+
+/***/ }),
+/* 510 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+   value: true
+});
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Home = function Home() {
+   return _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(
+         'h3',
+         null,
+         'hello'
+      )
+   );
+};
+
+exports.default = Home;
 
 /***/ })
 /******/ ]);
