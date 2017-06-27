@@ -8,7 +8,8 @@ exports.seed = function(knex, Promise) {
         {id: 2, user_id: 1, name: 'chairs', description: "I was walking past a furniture store and it made me angry that all the people with money are able to afford chairs and I'm not", incident_date: '20170506'},
         {id: 3, user_id: 1, name: 'moving girl', description: "In the movies the girl sitting in front of me couldn't decide in which position to sit and just kept moving and shifting. It was very distracting and really ticked me off", incident_date: '20170504'},
         {id: 4, user_id: 1, name: 'avocados 2', description: 'avocados are damn expensive!!', incident_date: '20170503'},
-        {id: 5, user_id: 1, name: 'avocados', description: 'avocados are so bloody good I ate a gigantic bowl of guac and got angry at myself for having no self control', incident_date: '20170502'}
+        {id: 5, user_id: 1, name: 'avocados', description: 'avocados are so bloody good I ate a gigantic bowl of guac and got angry at myself for having no self control', incident_date: '20170502'},
+        {id: 6, user_id: 1, name: 'walkies!!', description: 'I want the public to know that I want to go for a walk with a friend but nobody to do it with me :(((((', incident_date: '20170628', is_public: true}
       ]);
     });
 };
