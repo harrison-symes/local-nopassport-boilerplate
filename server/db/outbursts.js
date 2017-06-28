@@ -1,15 +1,15 @@
 const getUserOutbursts = (user_id, db) => {
   return db('outbursts')
-    .where('outbursts.user_id', user_id)
-    .select('*')
+  .where('outbursts.user_id', user_id)
+  .select('*')
 }
 
-function addOutburst(outburst, db) {
+const addOutburst = (outburst, db) => {
   return db('outbursts')
-    .insert(outburst)
+  .insert(outburst)
 }
 
-function deleteOutburst(outburst_id, db) {
+const deleteOutburst = (outburst_id, db) => {
   return db('outbursts')
   .where('outbursts.id', outburst_id)
   .del()
@@ -17,8 +17,8 @@ function deleteOutburst(outburst_id, db) {
 
 const getPublicOutbursts = (db) => {
   return db('outbursts')
-    .select('*')
-    .where('outbursts.is_public', true)
+  .select('*')
+  .where('outbursts.is_public', true)
 }
 
 module.exports = {

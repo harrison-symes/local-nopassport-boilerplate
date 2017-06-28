@@ -14,9 +14,9 @@ test('getUserOutbursts returns all user outbursts', t => {
 })
 
 test('getPublicOutbursts returns all public outbursts', t => {
-  return db.getUserOutbursts(t.context.connection)
+  return db.getPublicOutbursts(t.context.connection)
     .then((result) => {
-      t.is(result[0].id, 1)
+      t.is(result[0].id, 6)
       t.not(result.length, 0)
     })
 })
@@ -37,7 +37,7 @@ test('addOutburst correctly adds outburst', t => {
 })
 
 
-test('deleteOutburst correctly adds outburst', t => {
+test('deleteOutburst correctly deletes outburst', t => {
   return t.context.connection('outbursts')
     .then((result) => {
       var originalLength = result.length

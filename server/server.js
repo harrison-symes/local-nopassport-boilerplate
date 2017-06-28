@@ -9,7 +9,6 @@ const cors = require('cors')
 const auth = require('./lib/auth')
 
 var logins = require('./routes/logins')
-var account = require('./routes/account')
 var outbursts = require('./routes/outbursts')
 
 const corsOptions = {
