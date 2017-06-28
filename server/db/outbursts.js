@@ -9,9 +9,10 @@ function addOutburst(outburst, db) {
     .insert(outburst)
 }
 
-function deleteOutburst(outburst, db) {
+function deleteOutburst(outburst_id, db) {
   return db('outbursts')
-    .insert(outburst)
+  .where('outbursts.id', outburst_id)
+  .del()
 }
 
 const getPublicOutbursts = (db) => {
