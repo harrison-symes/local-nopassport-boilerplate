@@ -24,7 +24,7 @@ test.cb('POST /login ', t => {
   })
 })
 
-test.cb('POST /login ', t => {
+test.cb('POST /login + outbursts', t => {
   process.env.JWT_SECRET = 'secret'
   const goodman = {
     username: 'goodman',
@@ -49,4 +49,28 @@ test.cb('POST /login ', t => {
         t.end()
     })
   })
+})
+
+
+test.cb('POST /register ', t => {
+  process.env.JWT_SECRET = 'secret'
+  const newUser = {
+    username: 'testuser',
+    password: 'testpassword'
+  }
+
+  const originalCount = 1
+
+  request(t.context.server)
+    .post('/api/v1/register')
+    .send(newUser)
+    .expect(200)
+    .end((err, res) => {
+      if (err) throw err
+      t.context.connection('users')
+      .then((members) => {
+        t.is(members.length, originalCount + 1)
+        t.end()
+      })
+    })
 })
