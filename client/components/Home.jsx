@@ -2,15 +2,19 @@ import React from 'react'
 import moment from 'moment'
 import {connect} from 'react-redux'
 
+
+//   // componentWillMount() {
+//   //   this.props.dispatch(getOutbursts())
+//   // }
+
+
 export class Home extends React.Component {
 
-  // componentWillMount() {
-  //   this.props.dispatch(getOutbursts())
-  // }
-
   render() {
-    return  <div className="container">
-      {/* <h1>My Outbursts</h1>
+    return (
+      <div className="container">
+
+       <h1>My Outbursts</h1>
 
       <div className="row year-week">
         <div className="nine columns offset-by-one">
@@ -31,7 +35,7 @@ export class Home extends React.Component {
               <h3 className="day-title">Monday</h3>
               <div className="smiley-holder">
                 <img className="sad-face" src="images/sad-face.png" alt=""/>
-                <img className="sad-face" src="mages/sad-face.png" alt=""/>
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
                 <img className="sad-face" src="images/sad-face.png" alt=""/>
                 <img className="sad-face" src="images/sad-face.png" alt=""/>
                 <img className="sad-face" src="images/sad-face.png" alt=""/>
@@ -106,8 +110,10 @@ export class Home extends React.Component {
 
         </div>
 
-      </div> */}
       </div>
+    </div>
 
+    )
   }
 }
+export default connect()(Home)
