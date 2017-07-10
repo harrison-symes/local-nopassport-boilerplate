@@ -3,3 +3,5 @@ static
 npm-debug.log
 .env
 .nyc_output
+bundle.js
+bundle.js.map

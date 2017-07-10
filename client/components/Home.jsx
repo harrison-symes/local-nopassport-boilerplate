@@ -9,32 +9,105 @@ export class Home extends React.Component {
   // }
 
   render() {
-    return (
-      <div>
-        <div className="heading row">
-          <h3>{`year ${year}`}</h3>
-          <h3>{`week ${currentWeekNumber}`}</h3>
+    return  <div className="container">
+      {/* <h1>My Outbursts</h1>
+
+      <div className="row year-week">
+        <div className="nine columns offset-by-one">
+          <img className="sad-face-press" src="images/sad-face.png" alt=""/>
         </div>
-        <div className="row">
-          <div className="one column"> {"<<"} </div>
-          <div className="ten columns">
-              <div className="five columns">Monday</div>
-              <div className="five columns">Tuesday</div>
-              <div className="five columns">Wednesday</div>
-              <div className="five columns">Thursday</div>
-              <div className="five columns">Friday</div>
-              <div className="five columns">Saturday</div>
-              <div className="five columns">Sunday</div>
+        <div className="two columns">
+          Year 2017 Week 26
+        </div>
+      </div>
+
+      <div className="row week-container">
+        <div className="one column">
+          <img src="../images/arrow-backward.svg" alt=""/>
+        </div>
+        <div className="week ten columns">
+          <div className="three-days six columns">
+            <div className="weekday">
+              <h3 className="day-title">Monday</h3>
+              <div className="smiley-holder">
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+                <img className="sad-face" src="mages/sad-face.png" alt=""/>
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+              </div>
+              <div className="smiley-holder">
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+              </div>
+            </div>
+            <div className="weekday">
+              <h3 className="day-title">Tuesday</h3>
+              <div className="smiley-holder">
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+              </div>
+              <div className="smiley-holder"></div>
+            </div>
+            <div className="weekday">
+              <h3 className="day-title">Wednesday</h3>
+              <div className="smiley-holder">
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+              </div>
+              <div className="smiley-holder"></div>
+            </div>
           </div>
-        <div className="one column"> {">>"} </div>
+
+          <div className="four-days six columns">
+            <div className="weekday">
+              <h3 className="day-title">Thursday</h3>
+              <div className="smiley-holder">
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+              </div>
+              <div className="smiley-holder"></div>
+            </div>
+            <div className="weekday">
+              <h3 className="day-title">Friday</h3>
+              <div className="smiley-holder">
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+              </div>
+              <div className="smiley-holder"></div>
+            </div>
+            <div className="weekday">
+              <h3 className="day-title">Saturday</h3>
+              <div className="smiley-holder">
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+              </div>
+              <div className="smiley-holder"></div>
+            </div>
+            <div className="weekday">
+              <h3 className="day-title">Sunday</h3>
+              <div className="smiley-holder">
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+                <img className="sad-face" src="images/sad-face.png" alt=""/>
+              </div>
+              <div className="smiley-holder"></div>
+            </div>
+          </div>
+
         </div>
 
+      </div> */}
       </div>
-    )
+
   }
 }
-
-let currentWeekNumber = moment().isoWeek();
-let year = moment().year()
-
-export default connect()(Home)
