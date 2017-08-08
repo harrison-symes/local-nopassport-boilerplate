@@ -31088,9 +31088,6 @@ exports.default = Header;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Home = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(4);
 
@@ -31104,210 +31101,304 @@ var _reactRedux = __webpack_require__(19);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-//   // componentWillMount() {
-//   //   this.props.dispatch(getOutbursts())
+// export class Home extends React.Component {
+//
+//   // componentWillMount () {
+//   //   this.props.dispatch(getAllClothing())
 //   // }
+//
+//   render() {
+//     return (
+//       <div className="container">
+//
+//        <h1>My Outbursts</h1>
+//
+//       <div className="row year-week">
+//         <div className="nine columns offset-by-one">
+//           <img className="sad-face-press" src="images/sad-face.png" alt=""/>
+//         </div>
+//         <div className="two columns">
+//           Year 2017 Week 26
+//         </div>
+//       </div>
+//
+//       <div className="row week-container">
+//         <div className="one column">
+//           <img src="../images/arrow-backward.svg" alt=""/>
+//         </div>
+//         <div className="week ten columns">
+//           <div className="three-days six columns">
+//             <div className="weekday">
+//               <h3 className="day-title">Monday</h3>
+//               <div className="smiley-holder">
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//               </div>
+//               <div className="smiley-holder">
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//               </div>
+//             </div>
+//             <div className="weekday">
+//               <h3 className="day-title">Tuesday</h3>
+//               <div className="smiley-holder">
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//               </div>
+//               <div className="smiley-holder"></div>
+//             </div>
+//             <div className="weekday">
+//               <h3 className="day-title">Wednesday</h3>
+//               <div className="smiley-holder">
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//               </div>
+//               <div className="smiley-holder"></div>
+//             </div>
+//           </div>
+//
+//           <div className="four-days six columns">
+//             <div className="weekday">
+//               <h3 className="day-title">Thursday</h3>
+//               <div className="smiley-holder">
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//               </div>
+//               <div className="smiley-holder"></div>
+//             </div>
+//             <div className="weekday">
+//               <h3 className="day-title">Friday</h3>
+//               <div className="smiley-holder">
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//               </div>
+//               <div className="smiley-holder"></div>
+//             </div>
+//             <div className="weekday">
+//               <h3 className="day-title">Saturday</h3>
+//               <div className="smiley-holder">
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//               </div>
+//               <div className="smiley-holder"></div>
+//             </div>
+//             <div className="weekday">
+//               <h3 className="day-title">Sunday</h3>
+//               <div className="smiley-holder">
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//                 <img className="sad-face" src="images/sad-face.png" alt=""/>
+//               </div>
+//               <div className="smiley-holder"></div>
+//             </div>
+//           </div>
+//
+//         </div>
+//
+//       </div>
+//     </div>
+//
+//     )
+//   }
+// }
+// export default connect()(Home)
 
 
-var Home = exports.Home = function (_React$Component) {
-  _inherits(Home, _React$Component);
-
-  function Home() {
-    _classCallCheck(this, Home);
-
-    return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
-  }
-
-  _createClass(Home, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
+var Home = function Home(props) {
+  console.log(props);
+  return _react2.default.createElement(
+    'div',
+    { className: 'container' },
+    _react2.default.createElement(
+      'h1',
+      null,
+      'My Outbursts'
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'row year-week' },
+      _react2.default.createElement(
         'div',
-        { className: 'container' },
-        _react2.default.createElement(
-          'h1',
-          null,
-          'My Outbursts'
-        ),
+        { className: 'nine columns offset-by-one' },
+        _react2.default.createElement('img', { className: 'sad-face-press', src: 'images/sad-face.png', alt: '' })
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'two columns' },
+        'Year 2017 Week 26'
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'row week-container' },
+      _react2.default.createElement(
+        'div',
+        { className: 'one column' },
+        _react2.default.createElement('img', { src: '../images/arrow-backward.svg', alt: '' })
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'week ten columns' },
         _react2.default.createElement(
           'div',
-          { className: 'row year-week' },
+          { className: 'three-days six columns' },
           _react2.default.createElement(
             'div',
-            { className: 'nine columns offset-by-one' },
-            _react2.default.createElement('img', { className: 'sad-face-press', src: 'images/sad-face.png', alt: '' })
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'two columns' },
-            'Year 2017 Week 26'
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'row week-container' },
-          _react2.default.createElement(
-            'div',
-            { className: 'one column' },
-            _react2.default.createElement('img', { src: '../images/arrow-backward.svg', alt: '' })
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'week ten columns' },
+            { className: 'weekday' },
             _react2.default.createElement(
-              'div',
-              { className: 'three-days six columns' },
-              _react2.default.createElement(
-                'div',
-                { className: 'weekday' },
-                _react2.default.createElement(
-                  'h3',
-                  { className: 'day-title' },
-                  'Monday'
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'smiley-holder' },
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' })
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'smiley-holder' },
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' })
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'weekday' },
-                _react2.default.createElement(
-                  'h3',
-                  { className: 'day-title' },
-                  'Tuesday'
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'smiley-holder' },
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' })
-                ),
-                _react2.default.createElement('div', { className: 'smiley-holder' })
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'weekday' },
-                _react2.default.createElement(
-                  'h3',
-                  { className: 'day-title' },
-                  'Wednesday'
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'smiley-holder' },
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' })
-                ),
-                _react2.default.createElement('div', { className: 'smiley-holder' })
-              )
+              'h3',
+              { className: 'day-title' },
+              'Monday'
             ),
             _react2.default.createElement(
               'div',
-              { className: 'four-days six columns' },
-              _react2.default.createElement(
-                'div',
-                { className: 'weekday' },
-                _react2.default.createElement(
-                  'h3',
-                  { className: 'day-title' },
-                  'Thursday'
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'smiley-holder' },
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' })
-                ),
-                _react2.default.createElement('div', { className: 'smiley-holder' })
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'weekday' },
-                _react2.default.createElement(
-                  'h3',
-                  { className: 'day-title' },
-                  'Friday'
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'smiley-holder' },
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' })
-                ),
-                _react2.default.createElement('div', { className: 'smiley-holder' })
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'weekday' },
-                _react2.default.createElement(
-                  'h3',
-                  { className: 'day-title' },
-                  'Saturday'
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'smiley-holder' },
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' })
-                ),
-                _react2.default.createElement('div', { className: 'smiley-holder' })
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'weekday' },
-                _react2.default.createElement(
-                  'h3',
-                  { className: 'day-title' },
-                  'Sunday'
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'smiley-holder' },
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
-                  _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' })
-                ),
-                _react2.default.createElement('div', { className: 'smiley-holder' })
-              )
+              { className: 'smiley-holder' },
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'smiley-holder' },
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' })
             )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'weekday' },
+            _react2.default.createElement(
+              'h3',
+              { className: 'day-title' },
+              'Tuesday'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'smiley-holder' },
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' })
+            ),
+            _react2.default.createElement('div', { className: 'smiley-holder' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'weekday' },
+            _react2.default.createElement(
+              'h3',
+              { className: 'day-title' },
+              'Wednesday'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'smiley-holder' },
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' })
+            ),
+            _react2.default.createElement('div', { className: 'smiley-holder' })
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'four-days six columns' },
+          _react2.default.createElement(
+            'div',
+            { className: 'weekday' },
+            _react2.default.createElement(
+              'h3',
+              { className: 'day-title' },
+              'Thursday'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'smiley-holder' },
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' })
+            ),
+            _react2.default.createElement('div', { className: 'smiley-holder' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'weekday' },
+            _react2.default.createElement(
+              'h3',
+              { className: 'day-title' },
+              'Friday'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'smiley-holder' },
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' })
+            ),
+            _react2.default.createElement('div', { className: 'smiley-holder' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'weekday' },
+            _react2.default.createElement(
+              'h3',
+              { className: 'day-title' },
+              'Saturday'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'smiley-holder' },
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' })
+            ),
+            _react2.default.createElement('div', { className: 'smiley-holder' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'weekday' },
+            _react2.default.createElement(
+              'h3',
+              { className: 'day-title' },
+              'Sunday'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'smiley-holder' },
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' }),
+              _react2.default.createElement('img', { className: 'sad-face', src: 'images/sad-face.png', alt: '' })
+            ),
+            _react2.default.createElement('div', { className: 'smiley-holder' })
           )
         )
-      );
-    }
-  }]);
+      )
+    )
+  );
+};
 
-  return Home;
-}(_react2.default.Component);
+var mapStateToProps = function mapStateToProps(state) {
+  return { user: state.auth.user };
+};
 
-exports.default = (0, _reactRedux.connect)()(Home);
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(Home);
 
 /***/ }),
 /* 308 */
