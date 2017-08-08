@@ -1,4 +1,3 @@
-const sodium = require('sodium').api
 const bcrypt = require('bcryptjs')
 
 module.exports = {
