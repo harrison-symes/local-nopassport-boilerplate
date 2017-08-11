@@ -118,7 +118,6 @@ import {connect} from 'react-redux'
 
 
 const Home = (props) => {
-console.log(props);
     return (
       <div className="container">
 

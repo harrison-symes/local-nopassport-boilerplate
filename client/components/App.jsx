@@ -5,15 +5,16 @@ import SignInFormContainer from '../containers/SignInFormContainer'
 import SignUpFormContainer from '../containers/SignUpFormContainer'
 import Header from './Header'
 import Home from './Home'
+import Nav from './Nav'
 
 const App = () => (
   <Router>
     <div className='app'>
-      <Header/> {/*<Route component={ErrorMessage} /> */}
-      <Route exact path="/" component={SignInFormContainer}/>
-      <Route path="/outbursts" component={Home}/> {/* <Route component={PageNotFound} /> */}
-      {/*<Footer /> */}
+      <Header/>
+      <Nav/>
+      <Route exact path="/signIn" component={SignInFormContainer}/>
       <Route exact path="/signUp" component={SignUpFormContainer}/>
+      <Route exact path="/" component={Home}/>
     </div>
   </Router>
 )

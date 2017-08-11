@@ -8,7 +8,7 @@ import { loginUser } from '../actions/login'
 class SignInFormContainer extends React.Component {
 
   submit (values) {
-    this.props.dispatch(loginUser(values, () => this.props.history.push('/outbursts')))
+    this.props.dispatch(loginUser(values, () => this.props.history.push('/')))
   }
 
   render () {

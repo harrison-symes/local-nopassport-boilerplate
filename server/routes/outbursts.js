@@ -10,6 +10,7 @@ router.get('/outbursts',
     secret: getSecret
   }),
   (req, res) => {
+    console.log(req);
     let db = req.app.get('db')
     if (req.user) {
            outburstsDB.getUserOutbursts(req.user.id, db)
