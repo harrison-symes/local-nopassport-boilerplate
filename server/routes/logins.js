@@ -12,6 +12,7 @@ router.post('/register', (req, res, next) => {
     next()
   })
   .catch((err) => {
+    console.log(err);
     if (err.errno) return res.sendStatus(409)
     else res.sendStatus(500)
   })

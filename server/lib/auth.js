@@ -5,6 +5,7 @@ const users = require('../db/users')
 
 let connection = null
 function createToken (user, secret) {
+  console.log({secret});
   return jwt.sign(user, secret, {
     expiresIn: '24h'
   })

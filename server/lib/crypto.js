@@ -6,7 +6,7 @@ module.exports = {
 }
 
 function getHash (password) {
-return bcrypt.hashSync(password, 8)
+  return bcrypt.hashSync(password, 8)
 }
 
 function verifyUser (user, password) {
