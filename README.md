@@ -21,5 +21,6 @@ https://github.com/hihi-2017/phase-2-boilerplate
   * `npm run dev` to watch locally
   * `knex migrate:latest` to create the users table
   * `knex seed:run` if you want a seeded test user, username is `goodman`, password is... `password`
+  * rename `.env_example` to `.env`
 
-  Get some console logs going in the code to see what is happening where :) 
+  Get some console logs going in the code to see what is happening where :)
