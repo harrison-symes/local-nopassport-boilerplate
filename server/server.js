@@ -7,7 +7,6 @@ const cors = require('cors')
 const auth = require('./lib/auth')
 
 var logins = require('./routes/logins')
-var outbursts = require('./routes/outbursts')
 
 const corsOptions = {
   origin: true,
@@ -25,6 +24,5 @@ server.use(express.static(path.join(__dirname, '../public')))
 server.use(express.static('public'))
 
 server.use('/api/v1', logins)
-server.use('/api/v1', outbursts)
 
 module.exports = server

@@ -21,7 +21,6 @@ let SignInForm = props => {
 
         <div className="row">
           <button className='form-button button-primary login-button' type='submit'>Log in</button>
-          <Link to={'/signUp'}><button className='form-button button-primary' type='submit'>Sign up</button></Link>
         </div>
         <button className='form-button' type='button' disabled={submitting} onClick={reset}>Clear</button>
       </form>

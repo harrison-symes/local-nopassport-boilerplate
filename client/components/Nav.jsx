@@ -1,15 +1,23 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import {connect} from 'react-redux'
+import Logout from './Logout'
 
 
-const Header = () =>
-   (
+const Nav = props => {
+  const {isAuthenticated, user} = props.auth
+   return (
      <div className="row nav">
-       <Link to={'/signUp'}><button className='form-button button-primary' type='submit'>Sign up</button></Link>
-       <Link to={'/signIn'}><button className='form-button button-primary' type='submit'>Login</button></Link>
+       {!isAuthenticated ? <Link to={'/signUp'}><button>Sign up</button></Link> : <Link to={'/account'}><button>Account</button></Link>}
+       {!isAuthenticated ? <Link to={'/signIn'}><button>Login</button></Link> : <Logout/>}
      </div>
 
 
    )
+}
 
-export default Header
+const mapStateToProps = (state) => {
+  return {auth: state.auth}
+}
+
+export default connect(mapStateToProps)(Nav)

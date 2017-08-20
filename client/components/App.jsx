@@ -4,8 +4,8 @@ import {HashRouter as Router, Route, Switch} from 'react-router-dom'
 import SignInFormContainer from '../containers/SignInFormContainer'
 import SignUpFormContainer from '../containers/SignUpFormContainer'
 import Header from './Header'
-import Home from './Home'
 import Nav from './Nav'
+import Account from './Account'
 
 const App = () => (
   <Router>
@@ -14,7 +14,7 @@ const App = () => (
       <Nav/>
       <Route exact path="/signIn" component={SignInFormContainer}/>
       <Route exact path="/signUp" component={SignUpFormContainer}/>
-      <Route exact path="/" component={Home}/>
+      <Route exact path="/account" component={Account}/>
     </div>
   </Router>
 )
