@@ -15394,10 +15394,6 @@ var _Nav = __webpack_require__(192);
 
 var _Nav2 = _interopRequireDefault(_Nav);
 
-var _Account = __webpack_require__(189);
-
-var _Account2 = _interopRequireDefault(_Account);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
@@ -15410,8 +15406,7 @@ var App = function App() {
       _react2.default.createElement(_Header2.default, null),
       _react2.default.createElement(_Nav2.default, null),
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/signIn', component: _SignInFormContainer2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/signUp', component: _SignUpFormContainer2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/account', component: _Account2.default })
+      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/signUp', component: _SignUpFormContainer2.default })
     )
   );
 };
@@ -15440,11 +15435,16 @@ var _auth = __webpack_require__(200);
 
 var _auth2 = _interopRequireDefault(_auth);
 
+var _quote = __webpack_require__(520);
+
+var _quote2 = _interopRequireDefault(_quote);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = (0, _redux.combineReducers)({
   auth: _auth2.default,
   errors: _errors2.default,
+  quote: _quote2.default,
   form: _reduxForm.reducer
 });
 
@@ -15488,45 +15488,7 @@ thunk.withExtraArgument = createThunkMiddleware;
 exports['default'] = thunk;
 
 /***/ }),
-/* 189 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(3);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(31);
-
-var _reactRedux = __webpack_require__(11);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Account = function Account(props) {
-  var _props$auth = props.auth,
-      isAuthenticated = _props$auth.isAuthenticated,
-      user = _props$auth.user;
-
-  return _react2.default.createElement(
-    'div',
-    null,
-    'Hello, your account number is ',
-    user.id
-  );
-};
-var mapStateToProps = function mapStateToProps(state) {
-  return { auth: state.auth };
-};
-
-exports.default = (0, _reactRedux.connect)(mapStateToProps)(Account);
-
-/***/ }),
+/* 189 */,
 /* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15555,7 +15517,7 @@ var Header = function Header() {
       _react2.default.createElement(
         'h1',
         null,
-        '^_^'
+        '(\u25D1\u203F\u25D0)'
       )
     )
   );
@@ -15594,11 +15556,7 @@ var Logout = function Logout(props) {
           if (window.location.hash !== '#/') props.history.push('/');
         });
       } },
-    _react2.default.createElement(
-      _reactRouterDom.Link,
-      { to: '/#' },
-      'Logout'
-    )
+    'Logout'
   );
 };
 
@@ -15635,6 +15593,10 @@ var _Logout = __webpack_require__(191);
 
 var _Logout2 = _interopRequireDefault(_Logout);
 
+var _Quote = __webpack_require__(519);
+
+var _Quote2 = _interopRequireDefault(_Quote);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Nav = function Nav(props) {
@@ -15653,15 +15615,7 @@ var Nav = function Nav(props) {
         null,
         'Sign up'
       )
-    ) : _react2.default.createElement(
-      _reactRouterDom.Link,
-      { to: '/account' },
-      _react2.default.createElement(
-        'button',
-        null,
-        'Account'
-      )
-    ),
+    ) : _react2.default.createElement(_Quote2.default, null),
     !isAuthenticated ? _react2.default.createElement(
       _reactRouterDom.Link,
       { to: '/signIn' },
@@ -15798,7 +15752,7 @@ var SignUpForm = function SignUpForm(props) {
     _react2.default.createElement(
       'h2',
       null,
-      'Let it burst!'
+      'Enter your details below'
     ),
     _react2.default.createElement(
       'form',
@@ -41504,6 +41458,197 @@ module.exports = function(module) {
 	return module;
 };
 
+
+/***/ }),
+/* 518 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.QUOTE_FAILURE = exports.QUOTE_SUCCESS = exports.QUOTE_REQUEST = undefined;
+exports.fetchSecretQuote = fetchSecretQuote;
+exports.receiveQuote = receiveQuote;
+
+var _api = __webpack_require__(109);
+
+var _api2 = _interopRequireDefault(_api);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var QUOTE_REQUEST = exports.QUOTE_REQUEST = 'QUOTE_REQUEST';
+var QUOTE_SUCCESS = exports.QUOTE_SUCCESS = 'QUOTE_SUCCESS';
+var QUOTE_FAILURE = exports.QUOTE_FAILURE = 'QUOTE_FAILURE';
+
+function fetchSecretQuote() {
+  return function (dispatch) {
+    dispatch(requestQuote());
+    (0, _api2.default)('get', '/quote').then(function (res) {
+      dispatch(receiveQuote(res.body.message, res.body.user));
+    }).catch(function (err) {
+      return dispatch(quoteError(err.response.body.message));
+    });
+  };
+}
+
+function receiveQuote(quote, user) {
+  quote = user ? quote + ' ' + user : quote;
+  return {
+    type: QUOTE_SUCCESS,
+    isFetching: false,
+    response: quote
+  };
+}
+
+function requestQuote() {
+  return {
+    type: QUOTE_REQUEST,
+    isFetching: true
+  };
+}
+
+function quoteError(message) {
+  return {
+    type: QUOTE_FAILURE,
+    isFetching: false,
+    message: message
+  };
+}
+
+/***/ }),
+/* 519 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(11);
+
+var _quote = __webpack_require__(518);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Quote = function Quote(props) {
+  var onSecretQuoteClick = props.onSecretQuoteClick,
+      quote = props.quote;
+
+
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(
+        'button',
+        { onClick: onSecretQuoteClick },
+        'Get Private Quote'
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      quote && _react2.default.createElement(
+        'p',
+        null,
+        quote
+      )
+    )
+  );
+};
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    quote: state.quote.quote,
+    isAuthenticated: state.auth.isAuthenticated
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    onQuoteClick: function onQuoteClick() {
+      return dispatch(fetchQuote());
+    },
+    onSecretQuoteClick: function onSecretQuoteClick() {
+      return dispatch((0, _quote.fetchSecretQuote)());
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Quote);
+
+/***/ }),
+/* 520 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = quote;
+
+var _quote = __webpack_require__(518);
+
+var _login = __webpack_require__(63);
+
+var _logout = __webpack_require__(107);
+
+var initialState = {
+  isFetching: false,
+  errorMessage: '',
+  quote: ''
+};
+
+function quote() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments[1];
+
+  switch (action.type) {
+    case _quote.QUOTE_REQUEST:
+      return {
+        isFetching: true,
+        errorMessage: '',
+        quote: ''
+      };
+    case _quote.QUOTE_SUCCESS:
+      return {
+        isFetching: false,
+        quote: action.response,
+        errorMessage: ''
+      };
+    case _quote.QUOTE_FAILURE:
+      return {
+        isFetching: false,
+        errorMessage: action.message,
+        quote: ''
+      };
+    case _login.LOGIN_SUCCESS:
+      return {
+        quote: '',
+        errorMessage: ''
+      };
+    case _logout.LOGOUT_SUCCESS:
+      return {
+        quote: '',
+        errorMessage: ''
+      };
+    default:
+      return state;
+  }
+}
 
 /***/ })
 /******/ ]);

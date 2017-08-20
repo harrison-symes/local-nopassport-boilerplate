@@ -27,7 +27,7 @@ router.use(
   auth.handleError
 )
 
-router.get('/account', (req, res) => {
+router.get('/quote', (req, res) => {
   res.json({
     message: 'This is a SECRET quote.',
     user: `Your user ID is: ${req.user.id}`

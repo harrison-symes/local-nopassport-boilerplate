@@ -7,7 +7,7 @@ let SignUpForm = props => {
 
   return (
     <div className="container">
-      <h2>Let it burst!</h2>
+      <h2>Enter your details below</h2>
       <form className="register" onSubmit={handleSubmit}>
         <div className="offset-by-three three columns centered">
           <div>

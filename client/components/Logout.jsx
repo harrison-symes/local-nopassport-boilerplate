@@ -8,7 +8,7 @@ const Logout = (props) => {
     <button id="logout" className="logout" onClick={() => props.logoutUser(() => {
       if (window.location.hash !== '#/') props.history.push('/')
     })
-  }><Link to={'/#'}>Logout</Link></button>
+  }>Logout</button>
   )
 }
 
